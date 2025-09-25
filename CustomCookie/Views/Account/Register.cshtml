@@ -1,7 +1,7 @@
-﻿@model LoginViewModel
+﻿@model RegisterViewModel
 
 @{
-	ViewData["Title"] = "Login";
+	ViewData["Title"] = "Register";
 	Layout = null;
 }
 
@@ -27,7 +27,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
-					<h3>Sign In</h3>
+					<h3>Register</h3>
 					<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>
@@ -40,7 +40,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input asp-for="UserName" type="text" class="form-control" placeholder="username">
+							<input asp-for="Username" type="text" class="form-control" placeholder="username">
 
 						</div>
 						<div class="input-group form-group">
@@ -49,20 +49,20 @@
 							</div>
 							<input asp-for="Password" type="password" class="form-control" placeholder="password">
 						</div>
-						<div class="row align-items-center remember">
-							<input asp-for="RememberMe" type="checkbox">Remember Me
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="ConfirmPassword">
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Login" class="btn float-right login_btn">
+							<input type="submit" value="Register" class="btn float-right login_btn">
 						</div>
 					</form>
 				</div>
 				<div class="card-footer">
 					<div class="d-flex justify-content-center links">
-						Don't have an account?<a asp-action="Register" >Sign Up</a>
-					</div>
-					<div class="d-flex justify-content-center">
-						<a href="#">Forgot your password?</a>
+					 have an account?<a href="/Account/Login">Login</a>
 					</div>
 				</div>
 			</div>
@@ -72,3 +72,8 @@
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

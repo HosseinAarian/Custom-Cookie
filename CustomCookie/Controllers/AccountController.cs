@@ -8,6 +8,7 @@ namespace CustomCookie.Controllers;
 
 public class AccountController : Controller
 {
+    #region Login And LogOut
     public IActionResult Login()
     {
         return View();
@@ -34,4 +35,24 @@ public class AccountController : Controller
 
         return RedirectToAction("Index", "Home");
     }
+
+    public async Task<IActionResult> LogOut()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction(nameof(Login));
+    }
+    #endregion Login And LogOut
+
+    #region Register
+    public IActionResult Register()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Register(RegisterViewModel model)
+    {
+        return View();
+    }
+    #endregion 
 }
